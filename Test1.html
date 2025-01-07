@@ -1,0 +1,27 @@
+<!-- **실습 4 : `Number.isNaN` 체크를 통해 숫자가 아닌 경우 값을 받지 않도록**
+
+- 아래의 `validate` 함수를 수정하라 : 숫자가 아닌것을 입력받았을때 인풋에 값을 적용하지 않도록
+    - VSCode 의 Live Server 를 통해 테스트 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number.isNaN</title>
+  </head>
+  <body>
+    <input id="input" type="text" oninput="validate()" />
+    <script>
+      function validate() {
+        const input = document.getElementById("input");
+        let value = Number(input.value);
+        if (isNaN(value)) {
+          return;
+        }
+        console.log(value);
+        input.value = value;
+      }
+    </script>
+  </body>
+</html>

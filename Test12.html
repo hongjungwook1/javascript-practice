@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Option Select</title>
+  </head>
+  <body>
+    <select name="category" onchange="selected(this.value)">
+      <option value="computer">부품</option>
+      <option value="cloth">옷</option>
+      <option value="shoes">신발</option>
+    </select>
+    <script>
+      const products = {
+        COMPUTER: [
+          { name: "GeForce RTX 4090" },
+          { name: "AMD 9600X" },
+          { name: "Intel i7-14700K" },
+        ],
+        CLOTH: [
+          { name: "Alpha Industries MA-1" },
+          { name: "Acne Studios Shearling Jacket" },
+        ],
+        SHOES: [
+          { name: "Nike Air Max 97 Triple White" },
+          { name: "Dr.Martens 1461 Leather Oxford" },
+        ],
+      };
+      function selected(value) {
+        const selected_products = [];
+        const upperValue = value.toUpperCase();
+        if (upperValue === "COMPUTER") {
+          Object.assign(selected_products, products.COMPUTER);
+        } else if (upperValue === "CLOTH") {
+          Object.assign(selected_products, products.CLOTH);
+        } else if (upperValue === "SHOES")
+          Object.assign(selected_products, products.SHOES);
+        console.log(selected_products);
+      }
+    </script>
+  </body>
+</html>
