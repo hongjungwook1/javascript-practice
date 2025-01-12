@@ -22,15 +22,18 @@ const jobs = {
 const user = {
   name: "Aaron",
   age: 10,
-  job: "Developer",
+  job: "developer",
   address: {
     location: "Earth",
   },
 };
 
-// 해당 유저의 이름은 Aaron이고, 나이는 10살 이며, 직업은 개발자입니다.
+function toString({ name, age, job }) {
+  const jobInfo = jobs[job.toUpperCase()];
+  const jobName = jobInfo.name;
 
-const { name, age, jobName = "개발자" } = user;
-console.log(
-  `해당 유저의 이름은 ${name}이고, 나이는 ${age}살 이며, 직업은 ${jobName}입니다`
-);
+  return `해당 유저의 이름은 ${name}이고, 나이는 ${age}살이며, 직업은 ${jobName}입니다.`;
+}
+
+console.log(toString(user));
+// 해당 유저의 이름은 Aaron이고, 나이는 10살 이며, 직업은 개발자입니다.
