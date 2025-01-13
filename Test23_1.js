@@ -29,13 +29,13 @@ const product_to_add_2 = {
   price: 5000,
 };
 
-function add(list, element_to_add) {
-  const updatedProduct = {
-    ...list,
-    2: element_to_add,
-  };
-  return updatedProduct;
-}
-const updated = add(products, product_to_add_1);
+// function add(list, element_to_add) {
+//   const updatedProduct = {
+//     ...list,
+//     2: element_to_add,
+//   };
+//   return updatedProduct;
+// }
+// const updated = add(products, product_to_add_1);
 
-console.log(updated);
+// console.log(updated);
